@@ -108,19 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-@immutable
-class FetchResult {
-  final Iterable<Persons> persons;
-  final bool isRetrievedFromCache;
-  final bool isNetworkErr;
-  const FetchResult(
-      {this.isNetworkErr = false,
-      required this.persons,
-      required this.isRetrievedFromCache});
-  @override
-  String toString() =>
-      'FetchResult(isRetrievedFromCache = $isRetrievedFromCache, persons = $persons)';
-}
+
 
 enum PersonUrl { person1, person2 }
 

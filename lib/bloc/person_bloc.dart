@@ -1,5 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+extension IsEqualToIgnoringOrder<T> on Iterable<T> {
+  bool isEqualToIgnoringOrder(Iterable<T> other) =>
+      length == other.length &&
+      {...this}.intersection({...other}).length == length;
+}
+
 class PersonsBloc extends Bloc<LoadAction, FetchResult?> {
   final Map<PersonUrl, Iterable<Persons>> _cache = {};
   PersonsBloc() : super(null) {
